@@ -34,11 +34,10 @@ COLOR_RESET = "\033[0m"
 ansi_escape = re.compile(r'\x1b\[[0-9;]*m')
 
 def countdown_timer(seconds):
-    for remaining in range(seconds, 0, -1):
-        sys.stdout.write(f"\rNext check in: {COLOR_COUNTDOWN}{remaining:2d} seconds{COLOR_RESET} ")
-        sys.stdout.flush()
-        time.sleep(1)
-    sys.stdout.write("\r" + " " * 40 + "\r")
+    next_check = datetime.now() + timedelta(seconds=seconds)
+    next_str = next_check.strftime("%d %b %Y %H:%M:%S")
+    print(f"{COLOR_COUNTDOWN}Next check in: {seconds} seconds ({next_str}){COLOR_RESET}", flush=True)
+    time.sleep(seconds)
 
 def format_uptime(uptime_seconds):
     try:
