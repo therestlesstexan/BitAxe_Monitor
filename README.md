@@ -1,7 +1,7 @@
 # 📟 Bitaxe Flatline Monitor
 
 **Version:** `v0.13`  
-**Author:** The Restlass Texan  
+**Author:** The Restless Texan  
 **Language:** Python 3  
 **Purpose:** Monitors one or more Bitaxe miners and restarts them if shares stop increasing. Logs activity and sends alerts via Discord.
 
